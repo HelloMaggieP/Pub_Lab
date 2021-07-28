@@ -9,7 +9,8 @@ from src.drink import Drink
 class TestPub(unittest.TestCase):
     
     def setUp(self): 
-      self.pub = Pub("Casino Royale", 100.00)
+      self.pub = Pub("Casino Royale", 100)
+      self.drink = Drink("Vodka Martini", 10, 50)
 
 
     # @unittest.skip("Delete this line to run the test")
@@ -21,7 +22,8 @@ class TestPub(unittest.TestCase):
         self.assertEqual(100, self.pub.till)
 
     # @unittest.skip("Delete this line to run the test")
-    # def test_increase_till(self):
-    #     # self.drink.price()   ????
-    #     self.assertEqual(110, self.pub.increase_till())
+    def test_increase_till(self):
+        self.pub.increase_till(self.drink)
+        self.assertEqual(110, self.pub.till)
+
     

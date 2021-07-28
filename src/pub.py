@@ -5,6 +5,8 @@ class Pub:
         self.drink = []
 
 
-    def increase_till(self, amount):
-        self.till += amount
-        return self.till
+    def increase_till(self, drink):
+        self.till += drink.price
+        
+
+    

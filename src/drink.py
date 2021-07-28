@@ -5,3 +5,6 @@ class Drink:
         self.stock_level = stock_level
 
         
+    def reduce_stock(self):
+        self.stock_level -= 1
+        return self.stock_level

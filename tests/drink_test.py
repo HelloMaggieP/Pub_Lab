@@ -23,3 +23,7 @@ class TestDrink(unittest.TestCase):
     # @unittest.skip("Delete this line to run the test")
     def test_in_stock(self):
         self.assertEqual(50, self.drink.stock_level)
+
+    # @unittest.skip("Delete this line to run the test")
+    def test_reduce_stock(self):
+        self.assertEqual(49, self.drink.reduce_stock())
