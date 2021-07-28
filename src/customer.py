@@ -1,8 +1,9 @@
 class Customer:
-    def __init__(self, name, wallet):
+    def __init__(self, name, wallet, age):
         self.name = name
         self.wallet = wallet
         self.drink = 0
+        self.age = age
 
     def can_afford(self, drink):
         if self.wallet >= drink.price:
@@ -16,11 +17,12 @@ class Customer:
         return self.wallet
 
     def buy_drink(self, pub, drink):
-        if self.can_afford(drink):
-            self.reduce_wallet(drink)
-            pub.increase_till(drink)
-            drink.reduce_stock()
-            self.drink += 1
+        if pub.check_age():
+            if self.can_afford(drink):
+                self.reduce_wallet(drink)
+                pub.increase_till(drink)
+                drink.reduce_stock()
+                self.drink += 1
         return self.drink
 
 
