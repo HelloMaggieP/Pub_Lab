@@ -15,15 +15,13 @@ class Customer:
         self.wallet -= drink.price
         return self.wallet
 
-    # def buy_drink(self, pub, drink):
-        
-    #     cost = drink.price
-    #     if self.can_afford(cost):
-    #         self.reduce_wallet(cost)
-    #         pub.increase_till(drink)
-    #         drink.reduce_stock()
-    #         self.drink += 1
-    #     return self.drink
+    def buy_drink(self, pub, drink):
+        if self.can_afford(drink):
+            self.reduce_wallet(drink)
+            pub.increase_till(drink)
+            drink.reduce_stock()
+            self.drink += 1
+        return self.drink
 
 
     

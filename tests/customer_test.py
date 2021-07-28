@@ -31,8 +31,12 @@ class TestCustomer(unittest.TestCase):
     def test_reduce_wallet(self):
         self.assertEqual(40, self.customer.reduce_wallet(self.drink))
 
-    @unittest.skip("Delete this line to run the test")
+    # @unittest.skip("Delete this line to run the test")
     def test_buy_drink(self):
         self.customer.buy_drink(self.pub, self.drink)
+        self.assertEqual(40, self.customer.wallet)
+        self.assertEqual(110, self.pub.till)
+        self.assertEqual(49, self.drink.stock_level)
         self.assertEqual(1, self.customer.drink)
+
 
